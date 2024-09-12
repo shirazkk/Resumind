@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Resume</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+  </head>
+  <body>
+    <h1 class="tittle">Dynamic Resume</h1>
+    <div class="form-container">
+      <form action="#" method="get" id="form">
+        <div class="personal-info">
+          <h2>Personal Information</h2>
+
+          <label for=""
+            >Profile Picture
+            <p>
+              <input class="input-profile" type="file" name="profile" required/>
+            </p>
+          </label>
+
+          <label for="">
+            FullName
+            <p>
+              <input
+                type="text"
+                name="fullname"
+                class="fullname"
+                placeholder="Shiraz Ali"
+                required
+                
+              />
+            </p>
+          </label>
+          <label for=""
+            >Email
+            <p>
+              <input
+                type="email"
+                name="email"
+                class="email"
+                placeholder="shirazk8@gmail.com"
+                required
+                
+              />
+            </p>
+          </label>
+
+          <label for=""
+            >Contact No
+            <p>
+              <input
+                type="number"
+                name="Contact"
+                class="Contact"
+                placeholder="+923834342223"
+                required
+              />
+            </p>
+          </label>
+
+          <label for=""
+            >Address
+            <p>
+              <textarea
+                name="address"
+                class="Address"
+                placeholder="Enter Your Full Address"
+                required
+              ></textarea>
+            </p>
+          </label>
+          <label for=""
+            >Github Link
+            <p>
+              <input
+                type="url"
+                name="github"
+                class="github"
+                placeholder="github url"
+                required
+                
+              />
+            </p>
+          </label>
+        </div>
+
+        <div class="education">
+          <h2>Education</h2>
+          <label for=""
+            >Degree
+            <input
+              type="text"
+              name="degree"
+              class="degree"
+              placeholder="Bachelor in Artificial Intelligence"
+              required
+              
+            />
+          </label>
+          <label for=""
+            >University
+            <input
+              type="text"
+              name="University name"
+              class="uniname"
+              placeholder="SMIU"
+              required
+              
+            />
+          </label>
+          <label for=""
+            >Graduation Year
+            <input
+              type="date"
+              name="graduationyear"
+              class="graducationyear"
+              placeholder="2027"
+              required
+            />
+          </label>
+        </div>
+
+        <div class="skills">
+          <h2>Skills</h2>
+
+          <label for="" >
+            <input
+              class="skill-input"
+              type="text"
+              name="Skill-01"
+              id=""
+              placeholder="HTML"
+              required
+              
+            />
+          </label>
+
+          <label for="">
+            <input
+              class="skill-input"
+              type="text"
+              name="Skill-02"
+              id=""
+              placeholder="CSS"
+              required
+              
+            />
+          </label>
+
+          <label for="">
+            <input
+              class="skill-input"
+              type="text"
+              name="Skill-03"
+              id=""
+              placeholder="Javascript"
+              required
+              
+            />
+          </label>
+
+          <label for="">
+            <input
+              class="skill-input"
+              type="text"
+              name="Skill-04"
+              id=""
+              placeholder="Python"
+            />
+          </label>
+          <label for="">
+            <input
+              class="skill-input"
+              type="text"
+              name="Skill-05"
+              id=""
+              placeholder="Prompt-Engineering"
+            />
+          </label>
+        </div>
+
+        <div class="work-experience">
+          <h2>Work-Experience</h2>
+
+          <textarea
+            name="work-experience"
+            class="workexperience"
+            placeholder="Work experience"
+            required
+            
+          ></textarea>
+        </div>
+
+        <div class="button">
+          <button type="submit" class="generate-resume">Generate Resume</button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="userform userform_remove"></div>
+
+    <div class="edit-resume-box">
+      <button class="edit-resume" type="button">Edit Resume</button>
+      <button class="share-resume-btn" type="button">Generate Unique Url</button>
+    
+      <button class="download-btn" type="button">Download PDF</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
