@@ -1,215 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dynamic Resume</title>
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumify - Professional Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
-  </head>
-  <body>
-    <h1 class="tittle">Dynamic Resume</h1>
-    <div class="form-container">
-      <form action="#" method="get" id="form">
-        <div class="personal-info">
-          <h2>Personal Information</h2>
-
-          <label for=""
-            >Profile Picture
-            <p>
-              <input class="input-profile" type="file" name="profile" required/>
-            </p>
-          </label>
-
-          <label for="">
-            FullName
-            <p>
-              <input
-                type="text"
-                name="fullname"
-                class="fullname"
-                placeholder="Shiraz Ali"
-                required
-                
-              />
-            </p>
-          </label>
-          <label for=""
-            >Email
-            <p>
-              <input
-                type="email"
-                name="email"
-                class="email"
-                placeholder="shirazk8@gmail.com"
-                required
-                
-              />
-            </p>
-          </label>
-
-          <label for=""
-            >Contact No
-            <p>
-              <input
-                type="number"
-                name="Contact"
-                class="Contact"
-                placeholder="+923834342223"
-                required
-              />
-            </p>
-          </label>
-
-          <label for=""
-            >Address
-            <p>
-              <textarea
-                name="address"
-                class="Address"
-                placeholder="Enter Your Full Address"
-                required
-              ></textarea>
-            </p>
-          </label>
-          <label for=""
-            >Github Link
-            <p>
-              <input
-                type="url"
-                name="github"
-                class="github"
-                placeholder="github url"
-                required
-                
-              />
-            </p>
-          </label>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/web-logo.webp" alt="Resumify Logo">
+                <h2>Resumify</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#templates" class="nav-link">Templates</a>
+                <a href="#builder" class="nav-link">Builder</a>
+                <button class="nav-cta" onclick="scrollToBuilder()">Create Resume</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+    </nav>
 
-        <div class="education">
-          <h2>Education</h2>
-          <label for=""
-            >Degree
-            <input
-              type="text"
-              name="degree"
-              class="degree"
-              placeholder="Bachelor in Artificial Intelligence"
-              required
-              
-            />
-          </label>
-          <label for=""
-            >University
-            <input
-              type="text"
-              name="University name"
-              class="uniname"
-              placeholder="SMIU"
-              required
-              
-            />
-          </label>
-          <label for=""
-            >Graduation Year
-            <input
-              type="date"
-              name="graduationyear"
-              class="graducationyear"
-              placeholder="2027"
-              required
-            />
-          </label>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Build Your Professional Resume Online</h1>
+                <p>Create stunning, ATS-friendly resumes in minutes with our intuitive builder. Choose from multiple templates and customize every detail to match your career goals.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToBuilder()">
+                        <i class="fas fa-plus"></i> Create Resume
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToTemplates()">
+                        <i class="fas fa-eye"></i> View Templates
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span>50K+ Users</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-download"></i>
+                        <span>100K+ Downloads</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/img1.jpg" alt="Resume Builder Preview">
+            </div>
         </div>
+    </section>
 
-        <div class="skills">
-          <h2>Skills</h2>
-
-          <label for="" >
-            <input
-              class="skill-input"
-              type="text"
-              name="Skill-01"
-              id=""
-              placeholder="HTML"
-              required
-              
-            />
-          </label>
-
-          <label for="">
-            <input
-              class="skill-input"
-              type="text"
-              name="Skill-02"
-              id=""
-              placeholder="CSS"
-              required
-              
-            />
-          </label>
-
-          <label for="">
-            <input
-              class="skill-input"
-              type="text"
-              name="Skill-03"
-              id=""
-              placeholder="Javascript"
-              required
-              
-            />
-          </label>
-
-          <label for="">
-            <input
-              class="skill-input"
-              type="text"
-              name="Skill-04"
-              id=""
-              placeholder="Python"
-            />
-          </label>
-          <label for="">
-            <input
-              class="skill-input"
-              type="text"
-              name="Skill-05"
-              id=""
-              placeholder="Prompt-Engineering"
-            />
-          </label>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Choose Resumify?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Multiple Templates</h3>
+                    <p>Choose from professional templates designed for different industries and career levels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Create and edit your resume on any device with our responsive design.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>PDF Export</h3>
+                    <p>Download your resume as a high-quality PDF ready for job applications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Shareable Links</h3>
+                    <p>Generate unique URLs to share your resume with potential employers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ATS Optimized</h3>
+                    <p>Our templates are designed to pass through Applicant Tracking Systems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Easy Editing</h3>
+                    <p>Real-time preview and instant updates as you build your resume.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="work-experience">
-          <h2>Work-Experience</h2>
-
-          <textarea
-            name="work-experience"
-            class="workexperience"
-            placeholder="Work experience"
-            required
-            
-          ></textarea>
+    <!-- Templates Section -->
+    <section id="templates" class="templates">
+        <div class="container">
+            <h2>Professional Templates</h2>
+            <div class="template-grid">
+                <div class="template-card selected" data-template="modern">
+                    <div class="template-preview modern-preview">
+                        <div class="preview-header">
+                            <h3>John Doe</h3>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-section">
+                                <h4>Experience</h4>
+                                <p>Senior Developer at Tech Corp</p>
+                            </div>
+                            <div class="preview-section">
+                                <h4>Skills</h4>
+                                <div class="preview-skills">
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Modern</h3>
+                    <p>Clean and contemporary design</p>
+                    <button class="btn-template" onclick="selectTemplate('modern')">Use Template</button>
+                </div>
+                <div class="template-card" data-template="classic">
+                    <div class="template-preview classic-preview">
+                        <div class="preview-header">
+                            <h3>John Doe</h3>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-section">
+                                <h4>Experience</h4>
+                                <p>Senior Developer at Tech Corp</p>
+                            </div>
+                            <div class="preview-section">
+                                <h4>Skills</h4>
+                                <div class="preview-skills">
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Classic</h3>
+                    <p>Traditional professional style</p>
+                    <button class="btn-template" onclick="selectTemplate('classic')">Use Template</button>
+                </div>
+                <div class="template-card" data-template="creative">
+                    <div class="template-preview creative-preview">
+                        <div class="preview-header">
+                            <h3>John Doe</h3>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-section">
+                                <h4>Experience</h4>
+                                <p>Senior Developer at Tech Corp</p>
+                            </div>
+                            <div class="preview-section">
+                                <h4>Skills</h4>
+                                <div class="preview-skills">
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Creative</h3>
+                    <p>Stand out with unique design</p>
+                    <button class="btn-template" onclick="selectTemplate('creative')">Use Template</button>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="button">
-          <button type="submit" class="generate-resume">Generate Resume</button>
+    <!-- Resume Builder Section -->
+    <section id="builder" class="builder">
+        <div class="container">
+            <h2>Resume Builder</h2>
+            <div class="builder-container">
+                <!-- Form Section -->
+                <div class="form-section">
+                    <form id="resumeForm" class="resume-form">
+                        <!-- Personal Information -->
+                        <div class="form-group">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="profilePic">Profile Picture</label>
+                                    <input type="file" id="profilePic" accept="image/*" class="file-input">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="john.doe@email.com" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" placeholder="+1 (555) 123-4567" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="location">Location</label>
+                                    <input type="text" id="location" placeholder="City, State" required>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="address">Address</label>
+                                <textarea id="address" placeholder="Enter your full address"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="linkedin">LinkedIn</label>
+                                    <input type="url" id="linkedin" placeholder="https://linkedin.com/in/username">
+                                </div>
+                                <div class="form-field">
+                                    <label for="github">GitHub</label>
+                                    <input type="url" id="github" placeholder="https://github.com/username">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="form-group">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <div id="educationContainer">
+                                <div class="education-item">
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label for="degree">Degree</label>
+                                            <input type="text" name="degree[]" placeholder="Bachelor of Science in Computer Science" required>
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="university">University</label>
+                                            <input type="text" name="university[]" placeholder="University Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label for="graduationYear">Graduation Year</label>
+                                            <input type="date" name="graduationYear[]" required>
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="gpa">GPA (Optional)</label>
+                                            <input type="text" name="gpa[]" placeholder="3.8/4.0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-add" onclick="addEducation()">
+                                <i class="fas fa-plus"></i> Add Education
+                            </button>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="form-group">
+                            <h3><i class="fas fa-tools"></i> Skills</h3>
+                            <div id="skillsContainer">
+                                <div class="skills-input">
+                                    <input type="text" id="skillInput" placeholder="Add a skill and press Enter">
+                                    <button type="button" onclick="addSkill()">Add</button>
+                                </div>
+                                <div id="skillsList" class="skills-list"></div>
+                            </div>
+                        </div>
+
+                        <!-- Work Experience -->
+                        <div class="form-group">
+                            <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+                            <div id="experienceContainer">
+                                <div class="experience-item">
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label for="jobTitle">Job Title</label>
+                                            <input type="text" name="jobTitle[]" placeholder="Software Engineer" required>
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="company">Company</label>
+                                            <input type="text" name="company[]" placeholder="Company Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label for="startDate">Start Date</label>
+                                            <input type="date" name="startDate[]" required>
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="endDate">End Date</label>
+                                            <input type="date" name="endDate[]">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="currentJob[]"> Currently working here
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="jobDescription">Job Description</label>
+                                        <textarea name="jobDescription[]" placeholder="Describe your responsibilities and achievements"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-add" onclick="addExperience()">
+                                <i class="fas fa-plus"></i> Add Experience
+                            </button>
+                        </div>
+
+                        <!-- Projects -->
+                        <div class="form-group">
+                            <h3><i class="fas fa-project-diagram"></i> Projects</h3>
+                            <div id="projectsContainer">
+                                <div class="project-item">
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label for="projectName">Project Name</label>
+                                            <input type="text" name="projectName[]" placeholder="Project Name">
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="projectUrl">Project URL</label>
+                                            <input type="url" name="projectUrl[]" placeholder="https://project-url.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="projectDescription">Project Description</label>
+                                        <textarea name="projectDescription[]" placeholder="Describe your project and technologies used"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-add" onclick="addProject()">
+                                <i class="fas fa-plus"></i> Add Project
+                            </button>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-magic"></i> Generate Resume
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="clearForm()">
+                                <i class="fas fa-undo"></i> Clear Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="preview-section">
+                    <div class="preview-header">
+                        <h3>Live Preview</h3>
+                        <div class="preview-controls">
+                            <button class="btn-preview" onclick="togglePreview()">
+                                <i class="fas fa-eye"></i> Toggle Preview
+                            </button>
+                        </div>
+                    </div>
+                    <div id="resumePreview" class="resume-preview">
+                        <div class="preview-placeholder">
+                            <i class="fas fa-file-alt"></i>
+                            <p>Your resume preview will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </form>
+    </section>
+
+    <!-- Action Buttons -->
+    <div id="actionButtons" class="action-buttons" style="display: none;">
+        <button class="btn-action" onclick="editResume()">
+            <i class="fas fa-edit"></i> Edit Resume
+        </button>
+        <button class="btn-action" onclick="downloadPDF()">
+            <i class="fas fa-download"></i> Download PDF
+        </button>
+        <button class="btn-action" onclick="shareResume()">
+            <i class="fas fa-share"></i> Share Link
+        </button>
+        <button class="btn-action" onclick="printResume()">
+            <i class="fas fa-print"></i> Print
+        </button>
     </div>
-    
-    <div class="userform userform_remove"></div>
 
-    <div class="edit-resume-box">
-      <button class="edit-resume" type="button">Edit Resume</button>
-      <button class="share-resume-btn" type="button">Generate Unique Url</button>
-    
-      <button class="download-btn" type="button">Download PDF</button>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Resumify</h3>
+                    <p>Create professional resumes that get you hired.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#templates">Templates</a></li>
+                        <li><a href="#builder">Resume Builder</a></li>
+                        <li><a href="#features">ATS Optimization</a></li>
+                        <li><a href="#features">PDF Export</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Resumify. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast"></div>
 
     <script src="script.js"></script>
-  </body>
-</html>
+</body>
+</html> 

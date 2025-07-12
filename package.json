@@ -1,0 +1,46 @@
+{
+  "name": "resumify",
+  "version": "1.0.0",
+  "description": "A modern, feature-rich resume builder application with beautiful UI and comprehensive functionality",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "live-server --port=8000",
+    "build": "echo 'No build process required for static HTML/CSS/JS'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'"
+  },
+  "keywords": [
+    "resume",
+    "builder",
+    "cv",
+    "job",
+    "career",
+    "pdf",
+    "template",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Resumify Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/resumify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/resumify/issues"
+  },
+  "homepage": "https://github.com/yourusername/resumify#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 
