@@ -6,7 +6,8 @@
   "scripts": {
     "start": "python -m http.server 8000",
     "dev": "live-server --port=8000",
-    "build": "echo 'No build process required for static HTML/CSS/JS'",
+    "build": "echo 'Static site - no build required'",
+    "vercel-build": "echo 'Static site ready for deployment'",
     "test": "echo 'No tests specified'",
     "lint": "echo 'No linting configured'"
   },
